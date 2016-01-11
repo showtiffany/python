@@ -1,0 +1,410 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "just right\n"
+     ]
+    }
+   ],
+   "source": [
+    "guess_me=7\n",
+    "if guess_me<7:\n",
+    "    print('too low')\n",
+    "elif guess_me>7:\n",
+    "    print('too high')\n",
+    "else:\n",
+    "    print('just right')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "too low\n",
+      "too low\n",
+      "too low\n",
+      "too low\n",
+      "too low\n",
+      "too low\n",
+      "found it\n"
+     ]
+    }
+   ],
+   "source": [
+    "guess_me = 7\n",
+    "start = 1\n",
+    "while True:\n",
+    "    if start < guess_me:\n",
+    "        print('too low')\n",
+    "    elif start == guess_me:\n",
+    "        print('found it')\n",
+    "        break\n",
+    "    elif start > guess_me:\n",
+    "        print('oops')\n",
+    "        break\n",
+    "    start+=1    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "3\n",
+      "2\n",
+      "1\n",
+      "0\n"
+     ]
+    }
+   ],
+   "source": [
+    "for value in [3,2,1,0]:\n",
+    "    print(value)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[0, 2, 4, 6, 8]"
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "even=[number for number in range(10) if number %2==0]\n",
+    "even"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "squares={key:key*key for key in range(10)}\n",
+    "squares"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[1, 3, 5, 7, 9]"
+      ]
+     },
+     "execution_count": 16,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "odd=[number for number in range(10) if number %2==1]\n",
+    "odd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Got 0\n",
+      "Got 1\n",
+      "Got 2\n",
+      "Got 3\n",
+      "Got 4\n",
+      "Got 5\n",
+      "Got 6\n",
+      "Got 7\n",
+      "Got 8\n",
+      "Got 9\n"
+     ]
+    }
+   ],
+   "source": [
+    "for thing in ('Got %s' % number for number in range(10)):\n",
+    "    print(thing)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['Harry', 'Ron', 'Hermione']"
+      ]
+     },
+     "execution_count": 18,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "def good():\n",
+    "    return ['Harry','Ron','Hermione']\n",
+    "good()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "def get_odds():\n",
+    "    for number in range(1,10,2):\n",
+    "        yield number    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "the third odd nimber is 5\n"
+     ]
+    }
+   ],
+   "source": [
+    "for count, number in enumerate(get_odds(),1):\n",
+    "    if count==3:\n",
+    "        print('the third odd nimber is',number)\n",
+    "        break\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "def test(func):\n",
+    "    def new_func(*args,**kwargs):\n",
+    "        print('start')\n",
+    "        result=func(*args,**kwargs)\n",
+    "        print('end')\n",
+    "        return result\n",
+    "    return new_func"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "@test\n",
+    "def greeting():\n",
+    "    print('Greeting,Earthling')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "start\n",
+      "Greeting,Earthling\n",
+      "end\n"
+     ]
+    }
+   ],
+   "source": [
+    "greeting()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "class OopsException(Exception):\n",
+    "    pass"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "invalid syntax (<ipython-input-27-43752644b753>, line 2)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;36m  File \u001b[0;32m\"<ipython-input-27-43752644b753>\"\u001b[0;36m, line \u001b[0;32m2\u001b[0m\n\u001b[0;31m    Traceback (most recent call last):\u001b[0m\n\u001b[0m                         ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+     ]
+    }
+   ],
+   "source": [
+    "raise OopsException()\n",
+    "Traceback (most recent call last):\n",
+    "    File \"<stdin>\", line 1, in <module>\n",
+    "_main_.OopsException    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "caught an oops\n"
+     ]
+    }
+   ],
+   "source": [
+    "try:\n",
+    "    raise OopsException\n",
+    "except OopsException:\n",
+    "    print('caught an oops')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'creature of habit': 'a nun turns into a monster',\n",
+       " 'crewel fate': 'a haunted yarn shop'}"
+      ]
+     },
+     "execution_count": 29,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "titles=['creature of habit','crewel fate']\n",
+    "plots=['a nun turns into a monster','a haunted yarn shop']\n",
+    "movies=dict(zip(titles,plots))\n",
+    "movies"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.4.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}
